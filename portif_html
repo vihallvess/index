@@ -1,0 +1,201 @@
+!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio — Vitória Alves</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffd9e6; /* rosa claro */
+      --accent:#ffb6d0;
+      --card:#fff;
+      --text:#4a2b3a;
+    }
+    body{
+      margin:0;
+      font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background-color:var(--bg);
+      color:var(--text);
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='none' fill-rule='evenodd'><path d='M60 54c0 6.627-5.373 12-12 12-6.627 0-12-5.373-12-12s5.373-12 12-12c6.627 0 12 5.373 12 12z' fill='%23ffb6d0'/><path d='M60 54c0 6.627 5.373 12 12 12 6.627 0 12-5.373 12-12s-5.373-12-12-12c-6.627 0-12 5.373-12 12z' transform='translate(24 0)' fill='%23ffcbe0'/><path d='M48 54c-10 10-22 14-36 10 8-10 12-22 10-36 14 10 24 16 26 26z' opacity='0.05' fill='%23000000'/></g></svg>");
+      background-repeat:repeat;
+      background-size:120px 120px;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:48px 24px;
+    }
+
+    header{
+      text-align:center;
+      margin-bottom:36px;
+    }
+
+    .greeting{
+      display:inline-block;
+      padding:28px 36px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+      border-radius:18px;
+      box-shadow:0 8px 30px rgba(74,43,58,0.12);
+      border:3px solid rgba(255,182,208,0.35);
+    }
+
+    .greeting h1{
+      margin:0;
+      font-size:28px;
+      font-weight:800;
+      color:var(--text);
+    }
+    .greeting p{
+      margin:8px 0 0 0;
+      font-weight:600;
+      color:#6b4050;
+    }
+
+    nav{
+      margin-top:18px;
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    nav a{
+      text-decoration:none;
+      padding:8px 14px;
+      border-radius:999px;
+      background:transparent;
+      border:1px solid rgba(255,182,208,0.35);
+      color:var(--text);
+      font-weight:600;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
+      margin-top:28px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:18px;
+      box-shadow:0 6px 20px rgba(74,43,58,0.06);
+      border:1px solid rgba(255,182,208,0.25);
+    }
+    .card h3{margin:0 0 8px 0;font-size:18px}
+    .card p{margin:0;font-size:14px;color:#6b4050}
+
+    footer{
+      margin-top:40px;
+      text-align:center;
+      font-size:15px;
+      color:#5a3744;
+    }
+
+    .bow-decor{
+      display:inline-block;
+      width:28px;height:28px;
+      vertical-align:middle;
+      margin-right:8px;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><g fill='%23ff6fa8'><path d='M32 16c4 0 8 6 8 10s-4 10-8 10-8-6-8-10 4-10 8-10z'/><path d='M48 16c6 0 8 8 4 12-4 4-12 2-12-4 0-6 2-8 8-8z'/><path d='M16 16c-6 0-8 8-4 12 4 4 12 2 12-4 0-6-2-8-8-8z'/></g></svg>");
+      background-size:cover;
+    }
+
+    .pink-heart{
+      display:inline-block;
+      width:20px;height:20px;
+      vertical-align:middle;
+      margin-left:8px;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23ff93c2' d='M12 21s-7.5-4.9-9.2-7.1C-.1 9.8 3 5 7 6.1c1.8.5 2.8 2 3.2 2.8.4-.8 1.4-2.3 3.2-2.8 4-1.1 7.1 3.7 4.2 7.8C19.5 16.1 12 21 12 21z'/></svg>");
+      background-size:contain;
+    }
+
+    .instagram-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      margin-top:12px;
+      text-decoration:none;
+      background:#ff93c2;
+      color:#fff;
+      font-weight:600;
+      padding:10px 18px;
+      border-radius:30px;
+      transition:all 0.2s ease;
+    }
+    .instagram-btn:hover{
+      background:#ff6fa8;
+    }
+    .instagram-icon{
+      width:20px;height:20px;
+      display:inline-block;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 2c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm4.5-3c-.83 0-1.5.67-1.5 1.5S15.67 8 16.5 8 18 7.33 18 6.5 17.33 5 16.5 5z'/></svg>");
+      background-size:cover;
+    }
+
+    @media (max-width:520px){
+      .greeting h1{font-size:20px}
+      .greeting{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="greeting">
+        <h1><span class="bow-decor"></span>Seja bem vindo(a) ao meu portfólio</h1>
+        <p>Olá! Meu nome é <strong>Vitória Alves</strong> — seja muito bem-vinda(o) ✨</p>
+      </div>
+
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="sobre" class="card">
+        <h3><span class="bow-decor"></span>Sobre mim</h3>
+        <p>Meu nome é <strong>Vitória Alves</strong>, tenho <strong>15 anos</strong>. Sou curiosa e adoro muita adrenalina e desafio. Sou uma garota que dá risada de tudo, chora por causa de tudo também e, às vezes, sou muito brava — tudo isso faz parte de quem eu sou!</p>
+      </section>
+
+      <section id="projetos" style="margin-top:18px;">
+        <div class="grid">
+          <div class="card">
+            <h3>Projeto 1</h3>
+            <p>Adicione aqui uma descrição do seu primeiro projeto.</p>
+          </div>
+          <div class="card">
+            <h3>Projeto 2</h3>
+            <p>Adicione aqui uma descrição do seu segundo projeto.</p>
+          </div>
+          <div class="card">
+            <h3>Projeto 3</h3>
+            <p>Adicione aqui uma descrição do seu terceiro projeto.</p>
+          </div>
+          <div class="card">
+            <h3>Projeto 4</h3>
+            <p>Adicione aqui uma descrição do seu quarto projeto.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" style="margin-top:18px;">
+        <div class="card" style="text-align:center;">
+          <h3>Contato</h3>
+          <p>Você pode me encontrar no Instagram:</p>
+          <a href="https://instagram.com/vihallvess" target="_blank" class="instagram-btn"><span class="instagram-icon"></span> Me siga no Instagram</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Com muito amor e carinho: <strong>Vitória Alves</strong> <span class="pink-heart"></span></p>
+    </footer>
+  </div>
+</body>
+</html>
